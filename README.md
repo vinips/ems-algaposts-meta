@@ -5,6 +5,42 @@ Sistema cuida da criação, busca e processamento de posts. Essas operações s�
 
 <img width="807" height="408" alt="Image" src="https://github.com/user-attachments/assets/886c605c-38fb-4902-97e0-30d22b333801" />
 
+
+## Subindo Aplicação
+### RabbitMQ com Docker
+Na raiz do projeto, use os comandos a seguir para subir e encerrar o container.
+
+Subindo RabbitMQ
+```
+docker-compose up
+```
+
+Encerrando RabbitMQ
+```
+docker-compose down
+```
+
+URL do painel de controle de monitoramento de filas do RabbitMQ
+```
+http://localhost:15672/
+Login: rabbitmq
+Senha: rabbitmq
+```
+
+### Subindo PostService
+Em um novo Terminal
+```
+cd post-service
+./gradlew bootRun
+```
+
+### Subindo TextProcessorService
+Em um novo Terminal
+```
+cd text-processor-service
+./gradlew bootRun
+```
+
 ## End-points
 ### Create Post
 POST em http://localhost:8080/api/posts
